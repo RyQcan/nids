@@ -92,14 +92,14 @@ void http_date_parse(char content[])
 		const char s[2] = "&";
 		char *token;
 		char obj[3000] = {0};
-		printf("==== Packet Info ====\n");	
-		printf("source  : %s:%s\n", packet.s_source, packet.s_sport);
-		printf("dest    : %s:%s\n", packet.s_des, packet.s_dport);
-		printf("length  : %s\n",    packet.s_len);
+		printf(">>>>>>>>>>报文信息>>>>>>>>>>>>\n");	
+		printf("源地址   : %s:%s\n", packet.s_source, packet.s_sport);
+		printf("目的地址 : %s:%s\n", packet.s_des, packet.s_dport);
+		printf("长度    : %s\n",    packet.s_len);
 
 		unsigned int len = strlen(content);
 		int resultSize = URLDecode(content, len, obj, 3000);
-		printf("捕获长度%d\n",resultSize);
+		
 		token = strtok(obj, s);
 		/* 继续获取其他的子字符串 */
 		while( token != NULL ) 
@@ -108,7 +108,7 @@ void http_date_parse(char content[])
 			token = strtok(NULL, s);
 		}
 		printf("\n\n");
-		printf("Capture successfully!\n");
+		printf("<<<<<<<<<<捕获成功!<<<<<<<<<<<\n");
 	}
 }
 void http_callback(struct tcp_stream *a_tcp, void** this_time_not_needed)
