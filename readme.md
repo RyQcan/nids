@@ -6,10 +6,12 @@
 
 ## 环境
 
-* Ubuntu18.04
-* gcc
-* TOM邮箱 `http://mail.tom.com`
-* 依赖库: libnet libnids libpcap
+-|-
+-|-
+操作系统|Ubuntu18.04
+编译器|gcc
+邮箱|`http://mail.tom.com`
+依赖库|libnet libnids libpcap
 
 ## 功能
 
@@ -19,10 +21,11 @@
 * 按'&'分行
 
 ## 运行
-clone本仓库之后,编译
+
+clone本仓库之后
+
+编译
 `gcc -o nids nids.c -lnids -lpcap -lnet`
+
 运行
 `sudo ./nids`
-
-* 有时因网络问题需要抓取多次才能抓到包
-
